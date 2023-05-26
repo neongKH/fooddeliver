@@ -1,0 +1,251 @@
+// variables, colors
+$color-white: #ffffff;
+$color-black: #404040;
+$color-text-secondary: #636c81;
+$color-brand: #5a30f0;
+$color-lightgrey: #f3f6fb;
+$tt-ff: "TT Travels", "Helvetica", sans-serif;
+
+// Transition settings
+$transition-duration: 0.3s;
+
+// media settings
+$breakpoints: (
+	mobile-landscape: 568px,
+	tablet: 768px,
+	tablet-landscape: 1024px,
+	desktop: 1200px,
+	medium-desktop: 1440px,
+	large-desktop: 1800px,
+	ultra-desktop: 2400px,
+);
+$images-path: "../img/";
+
+body {
+	background-color: $color-white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: $tt-ff;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 400;
+	color: $color-black;
+	&.menu-open {
+		overflow: hidden;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	// common styles
+	font-family: $tt-ff;
+	font-weight: 500;
+	letter-spacing: -0.03em;
+	margin-bottom: 30px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1,
+.h1 {
+	font-size: 38px;
+	line-height: 42px;
+	font-weight: 400;
+	@include media(">=tablet") {
+		font-size: 56px;
+		line-height: 64px;
+	}
+
+	@include media(">=desktop") {
+		font-size: 76px;
+		line-height: 84px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 32px;
+	line-height: 34px;
+
+	@include media(">=tablet") {
+		font-size: 48px;
+		line-height: 49px;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 32px;
+	line-height: 38px;
+
+	@include media(">=desktop") {
+		font-size: 40px;
+		line-height: 48px;
+	}
+}
+
+h4,
+.h4 {
+	font-size: 24px;
+	line-height: 38px;
+}
+
+h5,
+.h5 {
+	font-size: 20px;
+	line-height: 27px;
+}
+
+h6,
+.h6 {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+	transition: color $transition-duration ease-in-out,
+		opacity $transition-duration ease-in-out;
+}
+
+.container {
+	padding-right: 20px;
+	padding-left: 20px;
+	width: auto;
+
+	@include media(">=desktop") {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	@include media(">=medium-desktop") {
+		max-width: 1370px;
+		margin: 0 auto;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.wrapper {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	flex-grow: 1;
+	min-height: 100vh;
+	height: 100%;
+	overflow: clip;
+}
+
+main {
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+
+.order-button {
+	width: 320px;
+	height: 250px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 600;
+	font-size: 19px;
+	line-height: 23px;
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	margin: 0 0 0 -170px;
+	z-index: 100;
+	pointer-events: auto;
+	transition: bottom 0.4s ease, opacity 0.4s ease-in-out;
+	.menu-open & {
+		opacity: 0;
+	}
+	@include media("<tablet") {
+		margin: 0 0 0 -120px;
+		width: 260px;
+		height: 260px;
+	}
+	@include media(">=desktop") {
+		&:hover {
+			.circle::before {
+				transform: translateX(-50%) translateY(-50%) scale(0.7);
+			}
+		}
+	}
+	.scrolled & {
+		@include media(">=desktop") {
+			&:hover {
+				.circle {
+					top: -70px;
+				}
+			}
+		}
+		.circle {
+			top: 30%;
+			@include media("<tablet") {
+				top: 50%;
+			}
+		}
+	}
+
+	.circle {
+		position: absolute;
+		top: 0%;
+		left: 10%;
+		width: 265px;
+		height: 265px;
+		transform: scale(0.75);
+		border-radius: 50%;
+		background: #5a30f0;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		z-index: 4;
+		pointer-events: none;
+		transition: background 0.4s ease, top 0.4s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		@include media("<tablet") {
+			width: 200px;
+			height: 200px;
+			top: 25%;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%) scale(0.5);
+			width: 200%;
+			height: 200%;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			z-index: 2;
+			pointer-events: none;
+			opacity: 0.3;
+			transition: transform 0.4s ease;
+		}
+	}
+}

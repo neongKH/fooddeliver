@@ -1,0 +1,63 @@
+.hero-section {
+	position: relative;
+	@include media("<tablet-landscape") {
+		padding-top: 150px;
+	}
+	@include media(">=tablet-landscape") {
+		height: 100vh;
+		min-height: 700px;
+	}
+	.container {
+		@include media(">=tablet-landscape") {
+			height: 100%;
+		}
+	}
+	&__img {
+		width: 50vw;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include media("<tablet-landscape") {
+			position: relative;
+			width: calc(100% + 40px);
+			height: 500px;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		@include media("<tablet-landscape") {
+			flex-direction: column-reverse;
+			height: auto;
+		}
+		@include media(">=tablet-landscape") {
+			height: 100%;
+		}
+	}
+	&__content {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		@include media("<tablet-landscape") {
+			width: 100%;
+			align-items: flex-start;
+			margin-bottom: 25px;
+		}
+		@include media(">=tablet-landscape") {
+			height: 100%;
+		}
+		.holder {
+			max-width: 400px;
+			margin-top: -10px;
+		}
+	}
+}
