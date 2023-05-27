@@ -1,10 +1,4 @@
-# gulp-scss-starter
-
-![License](https://img.shields.io/github/license/andreyalexeich/gulp-scss-starter)
-![GitHub stars](https://img.shields.io/github/stars/andreyalexeich/gulp-scss-starter.svg?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/andreyalexeich/gulp-scss-starter.svg?style=social)<br>
-<a href="https://qiwi.com/n/ANDREYALEXEICH"><img src="https://img.shields.io/badge/%D0%97%D0%B0%D0%B4%D0%BE%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%BF%D0%B8%D0%B2%D0%BE-Qiwi-orange?style=for-the-badge&logo=qiwi"></a>
-
+# FoodDeliver
 
 ## :fire: Особенности
 * именование классов по [БЭМ](https://ru.bem.info/)
@@ -168,12 +162,3 @@ svg use {
     ```
     * для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/vendor/_libs.scss```
     * JS-файлы и стилевые файлы библиотек самостоятельно изменять нельзя
-
-## :point_right: Нужен SCSS + Pug?
-Используйте [эту](https://github.com/andreyalexeich/gulp-pug-starter/) сборку.
-
-## :yellow_heart: Нравится проект?
-Сообщайте мне о [багах](https://github.com/andreyalexeich/gulp-scss-starter/issues), ставьте звёздочку в правом верхнем углу, [задонатьте](https://qiwi.com/n/ANDREYALEXEICH) мне на пиво :beer:
-
-## :envelope: Контакты
-По всем вопросам пишите в [Telegram](https://t.me/andreyalexeich)

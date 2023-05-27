@@ -10,7 +10,7 @@ elements.each(function () {
 	const element = $(this);
 	ScrollTrigger.create({
 		trigger: element,
-		start: "top 80%",
+		start: 150,
 		onEnter: function () {
 			if (!element.hasClass("animated")) {
 				element.addClass("animated");
